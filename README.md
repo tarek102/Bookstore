@@ -9,6 +9,7 @@ In this project I have built a Bookstore web app with two subpages "Books" and "
 
 - Javascript
 - React
+Redux
 
 
 ## Getting Started

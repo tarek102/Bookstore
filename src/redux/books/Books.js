@@ -1,13 +1,13 @@
-const addBook = 'BOOK_ADDED';
-const removeBook = 'BOOK_REMOVED';
+const ADD_BOOK = 'bookstore/books/ADD_BOOK';
+const REMOVE_BOOK = 'bookstore/books/BOOK_REMOVE';
 
 export const addBookFunc = (payload) => ({
-  type: addBook,
+  type: ADD_BOOK,
   payload,
 });
 
 export const removeBookFunc = (id) => ({
-  type: removeBook,
+  type: REMOVE_BOOK,
   id,
 });
 
@@ -15,11 +15,11 @@ export const removeBookFunc = (id) => ({
 
 const bookReducer = (state = [], action) => {
   switch (action.type) {
-    case addBook:
+    case ADD_BOOK:
       return [...state, { ...action.payload }];
 
-    case removeBook:
-      return state.filter((book) => book.id !== action.id);
+    case REMOVE_BOOK:
+      return state.filter((book) => book.id !== action.payload.id);
 
     default:
       return state;
@@ -27,17 +27,3 @@ const bookReducer = (state = [], action) => {
 };
 
 export default bookReducer;
-
-// const Books = () => {
-//   const [bookList] = useState([
-//     { title: 'The Hunger Games', author: 'Suzanne Collins', id: 1 },
-//   ]);
-//   return (
-//     <div>
-//       <Book bookList={bookList} />
-//       <Form />
-//     </div>
-//   );
-// };
-
-// export default Books;

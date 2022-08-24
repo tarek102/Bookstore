@@ -1,13 +1,12 @@
-const status = 'CHECK_STATUS';
-
+const STATUS = 'bookstore/categories/CHECK_STATUS';
 export const checkStatus = (payload) => ({
-  type: status,
+  type: STATUS,
   payload,
 });
 
 const categoriesReduser = (state = [], action) => {
   switch (action.type) {
-    case status:
+    case STATUS:
       return ['under_construction'];
 
     default:

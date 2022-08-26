@@ -22,10 +22,9 @@ const Form = () => {
     dispatch(
       addBook(id, title, author),
     );
-    
+
     setAuthor('');
     setTitle('');
-    
   };
   return (
     <div className="addBook">

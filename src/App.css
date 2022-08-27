@@ -13,13 +13,6 @@ body {
   color: #121212;
 }
 
-/* #root {
-  border: 1px solid;
-  width: 60%;
-  margin: 10% auto;
-  background-color: #ffffff;
-} */
-
 li {
   list-style: none;
 }
@@ -27,9 +20,19 @@ li {
 .navbar nav ul {
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
   padding: 1% 5%;
   background-color: #fff;
+  border-bottom: 1px solid #e8e8e8;
+  width: 100%;
+}
+
+.user-img {
+  color: #0290ff;
+  margin-left: 45%;
+  border: #e8e8e8 1px solid;
+  padding: 10px;
+  border-radius: 80px;
 }
 
 .category a {

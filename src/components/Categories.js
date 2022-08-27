@@ -3,9 +3,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { addCategory } from './redux/categories/categories';
 
 const Categories = () => {
-  const categories = useSelector((state) => state.category);
+  const categories = useSelector((state) => state.categories);
   const dispatch = useDispatch();
-  const onClick = () => {
+  const handleClick = () => {
     dispatch(
       addCategory(),
     );
@@ -13,7 +13,7 @@ const Categories = () => {
   return (
     <div className="categories">
       <p>{categories}</p>
-      <button type="button" onClick={onClick}>Check Status</button>
+      <button type="button" onClick={handleClick}>Check Status</button>
     </div>
   );
 };

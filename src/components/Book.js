@@ -1,30 +1,31 @@
+/* eslint-disable camelcase */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 
 const Book = ({ book, removeBook }) => {
-  const { id, title, author } = book;
+  const {
+    item_id, title, author, category,
+  } = book;
   return (
-    <li id={id} key={id}>
+    <li id={item_id} key={item_id}>
       <div className="bookItem">
-        <p>
-          <h3>{title}</h3>
-          <h4>{author}</h4>
-        </p>
-        <div>
-          <button type="button" onClick={removeBook}>Remove</button>
-        </div>
+        <h3>{title}</h3>
+        <h4>{author}</h4>
+        <h4>{category}</h4>
+        <button type="button" onClick={removeBook}>Remove</button>
       </div>
     </li>
   );
 };
 
 Book.propTypes = {
-  book: PropTypes.objectOf,
-  removeBook: PropTypes.func.isRequired,
-};
-
-Book.defaultProps = {
-  book: {},
+  book: PropTypes.shape({
+    item_id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default Book;

@@ -5,9 +5,9 @@ const Navbar = () => (
   <div className="navbar">
     <nav>
       <ul>
-        <li><h2>Bookstore CMS</h2></li>
+        <li><h2 className="logo">Bookstore CMS</h2></li>
         <li><Link to="/">Books</Link></li>
-        <li><Link to="/categories">Categories</Link></li>
+        <li className="category"><Link to="/categories">Categories</Link></li>
       </ul>
     </nav>
   </div>

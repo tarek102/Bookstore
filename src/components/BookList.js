@@ -8,7 +8,7 @@ const Booklist = () => {
 
   const dispatch = useDispatch();
   const handleClick = (e) => {
-    const { id } = e.target.parentNode.parentNode;
+    const { id } = e.target.parentNode.parentNode.parentNode.parentNode;
     dispatch(
       removeBookFunc(id),
     );
@@ -19,7 +19,7 @@ const Booklist = () => {
   }, []);
 
   return (
-    <ul>
+    <ul className="book-list">
       {books.map((book) => (
         <Book id={book.item_id} key={book.item_id} book={book} removeBook={handleClick} />
       ))}

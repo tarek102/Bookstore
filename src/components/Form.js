@@ -39,18 +39,19 @@ const Form = () => {
     setCategory(e.target.value);
   };
   return (
-    <div className="addBook">
-      <h2>ADD NEW BOOK</h2>
+    <div className="add-book">
+      <div className="separating-line" />
+      <h2 className="add-new-book">ADD NEW BOOK</h2>
       <form onSubmit={formSubmit}>
-        <input type="text" name="title" placeholder="Title" onChange={titleChange} value={title} />
-        <input type="text" name="author" placeholder="Author" onChange={authorChange} value={author} />
+        <input type="text" name="title" className="title-input" placeholder="Title" onChange={titleChange} value={title} />
+        <input type="text" name="author" className="author-input" placeholder="Author" onChange={authorChange} value={author} />
         <select name="Category" onClick={categoryChange}>
           <option value="General">Category</option>
           {categories.map((cat) => (
             <option key={cat} value={cat}>{cat}</option>
           ))}
         </select>
-        <button type="submit">ADD BOOK</button>
+        <button className="submit-btn" type="submit">ADD BOOK</button>
       </form>
     </div>
   );
